@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-**Exura Studio** is a professional web development agency portfolio website. It showcases services, portfolio projects, technologies, team members, and provides a contact form for potential clients.
+**Exura Studio** is a professional web development agency portfolio website built as a static multi-page site. It showcases services, portfolio projects, technologies, team members, and provides a contact form for potential clients.
 
 **Purpose:** Marketing/landing page for a web development studio specializing in custom web platforms, modular architecture, and business management systems.
 
@@ -10,7 +10,7 @@
 - **Frontend:** Vanilla HTML5, CSS3, JavaScript (no frameworks)
 - **Styling:** Custom CSS with CSS Variables, CSS Grid, Flexbox
 - **Icons:** Font Awesome 6.4.0 (CDN)
-- **Images:** Unsplash (CDN)
+- **Images:** Local images in `/img` directory (team photos)
 
 ## Project Structure
 
@@ -21,7 +21,11 @@ C:\ExuraPage\
 ├── styles.css          # Global styles (shared across pages)
 ├── script.js           # Main JavaScript (navbar, modals, animations, forms)
 ├── team.js             # Team member data and profile page logic
-└── QWEN.md             # This file
+├── QWEN.md             # This file
+└── img/
+    ├── team1.jpg       # Carlos Mendoza profile image
+    ├── team2.jpg       # Laura Gómez profile image
+    └── team3.jpg       # Andrés López profile image
 ```
 
 ## Key Features
@@ -41,6 +45,7 @@ C:\ExuraPage\
 - Dynamic content loaded via URL parameter (`?id=1`, `?id=2`, `?id=3`)
 - Displays member profile image, bio, technologies, specializations, and certifications
 - Data sourced from `team.js` mock database
+- Features sticky sidebar, animated sections, and back navigation
 
 ## Building and Running
 
@@ -65,7 +70,7 @@ This is a **static website** with no build process required.
    Then navigate to `http://localhost:8000`
 
 ### No Dependencies
-- All external resources (Font Awesome, Unsplash images) are loaded via CDN
+- All external resources (Font Awesome) are loaded via CDN
 - No `package.json`, `requirements.txt`, or other dependency files
 
 ## Development Conventions
@@ -76,20 +81,25 @@ This is a **static website** with no build process required.
   - Background: `#0d0d0d` (deep black)
   - Surface: `#141414` (dark grey for cards)
   - Primary: `#0E665B` (emerald/teal green)
+  - Primary Light: `#1a8a7a`
   - Text: `#ffffff` (white) and `#999999` (muted grey)
+  - Border: `#262626` and `#3a3a3a`
 - **Naming:** BEM-inspired (`.section-title`, `.service-card`, `.btn-primary`)
-- **Responsive:** Mobile-first with `@media` queries at 768px and 900px breakpoints
+- **Responsive:** Mobile-first with `@media` queries at 480px, 768px, 900px, and 1024px breakpoints
+- **Transitions:** Custom cubic-bezier easing variables for consistent animations
 
 ### JavaScript Patterns
 - **DOM Ready:** All code wrapped in `DOMContentLoaded` event
 - **Event Listeners:** Attached via `addEventListener` (no inline handlers)
 - **Animations:** IntersectionObserver for scroll-triggered animations
-- **Modularity:** Separate `team.js` for team-related logic
+- **Modularity:** Separate `team.js` for team-related data and logic
+- **State Management:** Class-based toggling for UI states (modals, menus)
 
 ### Code Style
 - **HTML:** Semantic tags (`<header>`, `<section>`, `<nav>`, `<footer>`)
-- **CSS:** Organized by component (variables, reset, typography, utilities, components)
-- **JS:** Vanilla ES6+ (arrow functions, template literals, destructuring)
+- **CSS:** Organized by component (variables, reset, typography, utilities, components, responsive)
+- **JS:** Vanilla ES6+ (arrow functions, template literals, destructuring, spread operator)
+- **Language:** Spanish content throughout the site
 
 ## Customization Points
 
@@ -99,11 +109,14 @@ Edit `team.js` `teamData` object:
 4: {
     name: "New Member",
     role: "Their Role",
-    image: "image-url",
+    image: "img/team4.jpg",
     bio: "Description...",
-    techs: ["Tech1", "Tech2"],
-    specs: ["Specialty 1"],
-    certs: ["Certification"]
+    techs: [
+        { name: "Tech1", icon: "fa-brands fa-tech1" },
+        { name: "Tech2", icon: "fa-solid fa-tech2" }
+    ],
+    specs: ["Specialty 1", "Specialty 2"],
+    certs: ["Certification 1", "Certification 2"]
 }
 ```
 
@@ -113,21 +126,32 @@ Modify CSS variables in `styles.css` `:root`:
 :root {
     --color-primary: #YOUR_COLOR;
     --color-bg: #YOUR_BACKGROUND;
+    --color-surface: #YOUR_SURFACE_COLOR;
 }
 ```
 
 ### Adding Services/Portfolio
-Duplicate card HTML in `index.html` and update content.
+Duplicate card HTML in `index.html` and update content. Ensure proper `view-animate` and `stagger-*` classes for animations.
+
+### Adding New Sections
+1. Add HTML structure in `index.html` following existing section patterns
+2. Add corresponding CSS in `styles.css`
+3. Include `view-animate` class for scroll animations
+4. Ensure responsive styles are added within existing media queries
 
 ## Known Limitations
 
 1. **Forms:** Contact and login forms simulate submission (no backend integration)
 2. **Team Data:** Hardcoded mock data in `team.js` (no database/API)
 3. **Authentication:** Login modal is UI-only (no actual authentication)
+4. **Images:** Team member 1 has incomplete image path in `index.html` (line ~160)
 
 ## Future Enhancements
 
 - Backend integration for contact form (email service)
-- Real authentication system
+- Real authentication system with JWT or session management
 - CMS for dynamic content management
 - Additional pages (About, Case Studies, Blog)
+- Portfolio project detail pages
+- Testimonials section
+- Dark/light theme toggle
