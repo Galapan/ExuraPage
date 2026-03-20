@@ -127,33 +127,103 @@ document.addEventListener('DOMContentLoaded', () => {
         heroElements.forEach(el => el.classList.add('in-view'));
     }, 100);
 
-    // --- Contact Form Logic ---
+    // --- Contact Form Logic - Web3Forms Integration ---
     const contactForm = document.getElementById('contactForm');
+    const formStatus = document.getElementById('formStatus');
+    
     if(contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
+            
             const btn = contactForm.querySelector('button[type="submit"]');
             const originalText = btn.textContent;
             const originalStyle = btn.getAttribute('style');
-
-            btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Enviando...';
+            
+            // Referencia: https://docs.web3forms.com/
+            
+            // =================================================================
+            // IMPORTANTE PARA EL EQUIPO DE DESARROLLO:
+            // =================================================================
+            // Antes de poner esto en producción, DEBES reemplazar la access_key
+            // en el HTML (index.html) por tu key real de Web3Forms.
+            // 
+            // Pasos:
+            // 1. Ve a https://web3forms.com y regístrate
+            // 2. Copia tu Access Key del dashboard
+            // 3. En index.html, busca: value="TU_ACCESS_KEY_AQUI"
+            // 4. Reemplázalo con tu key real
+            // =================================================================
+            
+            // Mostrar estado de enviando
+            btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Enviando...';
             btn.style.opacity = '0.8';
             btn.disabled = true;
-
-            // Simulate API call
-            setTimeout(() => {
-                btn.innerHTML = '<i class="fa-solid fa-check"></i> ¡Mensaje Enviado!';
-                btn.style.backgroundColor = '#0E665B';
+            
+            // Ocultar mensajes previos
+            if(formStatus) {
+                formStatus.style.display = 'none';
+                formStatus.className = 'form-status';
+            }
+            
+            // Recopilar datos del formulario
+            const formData = new FormData(contactForm);
+            
+            // Enviar a Web3Forms usando fetch (AJAX)
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            })
+            .then(async (response) => {
+                const json = await response.json();
+                
+                if (response.status === 200 && json.success) {
+                    // ÉXITO: El formulario se envió correctamente
+                    btn.innerHTML = '<i class="fa-solid fa-check"></i> ¡Mensaje Enviado!';
+                    btn.style.backgroundColor = '#0E665B';
+                    btn.style.color = '#ffffff';
+                    
+                    if(formStatus) {
+                        formStatus.innerHTML = '<i class="fa-solid fa-check-circle"></i> Gracias por contactarnos. Nos pondremos en comunicación pronto.';
+                        formStatus.style.color = '#0E665B';
+                        formStatus.style.display = 'block';
+                    }
+                    
+                    // Resetear formulario después de 2 segundos
+                    setTimeout(() => {
+                        contactForm.reset();
+                        btn.innerHTML = originalText;
+                        btn.setAttribute('style', originalStyle || '');
+                        btn.disabled = false;
+                        if(formStatus) formStatus.style.display = 'none';
+                    }, 3000);
+                    
+                } else {
+                    // ERROR: La API respondió con error
+                    throw new Error(json.message || 'Error al enviar el formulario');
+                }
+            })
+            .catch((error) => {
+                // ERROR: Manejo de errores de red o API
+                console.error('Error Web3Forms:', error);
+                
+                btn.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Error al Enviar';
+                btn.style.backgroundColor = '#dc3545';
                 btn.style.color = '#ffffff';
-
+                
+                if(formStatus) {
+                    formStatus.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Hubo un error al enviar. Por favor intenta nuevamente o contáctanos directamente.';
+                    formStatus.style.color = '#dc3545';
+                    formStatus.style.display = 'block';
+                }
+                
+                // Restaurar botón después de 3 segundos
                 setTimeout(() => {
                     btn.innerHTML = originalText;
                     btn.setAttribute('style', originalStyle || '');
                     btn.disabled = false;
-                    contactForm.reset();
-                    alert("Gracias por contactarnos. Nos pondremos en comunicación pronto.");
-                }, 2000);
-            }, 1500);
+                    if(formStatus) formStatus.style.display = 'none';
+                }, 3000);
+            });
         });
 
         // Add floating label effect

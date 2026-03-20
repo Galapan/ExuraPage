@@ -1,0 +1,157 @@
+/* =====================================================
+   09-FOOTER-RESPONSIVE.CSS
+   Footer y Diseños Responsive
+   ===================================================== */
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 3rem 2rem;
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .section {
+        padding: 4rem 1.5rem;
+        min-height: 100vh;
+    }
+
+    .services-grid,
+    .portfolio-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .contact-header {
+        text-align: center;
+        padding-right: 0;
+    }
+
+    .contact-header .section-title,
+    .contact-header .section-subtitle {
+        text-align: center;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --section-padding: 3.5rem 1.5rem;
+    }
+
+    #tecnologias {
+        padding: 4rem 1.5rem;
+        min-height: 100vh;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+        background: none;
+        border: none;
+        color: var(--color-text);
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        cursor: pointer;
+        transition: all var(--transition-fast);
+    }
+
+    .mobile-menu-btn:hover {
+        color: var(--color-primary);
+        transform: scale(1.1);
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .services-grid,
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card,
+    .portfolio-card {
+        min-height: auto;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+        max-width: 420px;
+        margin: 0 auto;
+    }
+
+    .tech-tabs {
+        justify-content: center;
+    }
+
+    .tech-tab {
+        padding: 0.625rem 1.125rem;
+        font-size: 0.875rem;
+    }
+
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.875rem;
+    }
+
+    .tech-card {
+        padding: 1rem 1.25rem;
+        min-height: 60px;
+    }
+
+    .tech-card i {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .modal-content {
+        margin: 1rem;
+        padding: 2rem 1.5rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}

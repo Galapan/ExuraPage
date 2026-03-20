@@ -1,0 +1,125 @@
+/* =====================================================
+   07-TECHNOLOGIES.CSS
+   Sección de Tecnologías (Tabs y Grid)
+   ===================================================== */
+
+#tecnologias {
+    padding: 6rem 2rem;
+    min-height: 100vh;
+}
+
+.tech-section-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.tech-title-main {
+    font-weight: 700;
+    color: var(--color-text);
+}
+
+.tech-title-muted {
+    font-weight: 400;
+    color: var(--color-text-muted);
+}
+
+.tech-underline {
+    width: 80px;
+    height: 3px;
+    background: var(--color-primary);
+    margin: 0.75rem auto 0;
+    border-radius: 2px;
+}
+
+.tech-tabs {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+
+.tech-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid var(--color-border-light);
+    background: transparent;
+    color: var(--color-text-muted);
+    font-family: inherit;
+    transition: all var(--transition-fast);
+}
+
+.tech-tab:hover {
+    color: var(--color-text);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.tech-tab.active {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    color: #ffffff;
+    border-color: transparent;
+    font-weight: 600;
+    box-shadow: 0 4px 15px var(--color-primary-glow);
+}
+
+@keyframes techPanelIn {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tech-panel {
+    display: none;
+}
+
+.tech-panel.active {
+    display: block;
+    animation: techPanelIn 0.35s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+}
+
+.tech-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--card-radius-sm);
+    padding: 1.75rem 2.25rem;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all var(--transition-fast);
+    cursor: default;
+    min-height: 90px;
+}
+
+.tech-card i {
+    font-size: 1.6rem;
+    color: var(--color-primary);
+    flex-shrink: 0;
+}
+
+.tech-card:hover {
+    background: var(--color-surface-hover);
+    border-color: rgba(14, 102, 91, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(14, 102, 91, 0.15);
+}

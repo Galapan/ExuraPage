@@ -1,0 +1,25 @@
+/* =====================================================
+   STYLES.CSS - Archivo Principal
+   Importa todos los módulos CSS
+   
+   ESTRUCTURA:
+   1. Variables y Reset
+   2. Utilidades y Botones
+   3. Navbar y Menú Móvil
+   4. Hero Section
+   5. Modal y Formularios
+   6. Secciones Generales
+   7. Tecnologías
+   8. Equipo y Contacto
+   9. Footer y Responsive
+   ===================================================== */
+
+@import '01-variables.css';
+@import '02-utilities.css';
+@import '03-navbar.css';
+@import '04-hero.css';
+@import '05-modal-forms.css';
+@import '06-sections.css';
+@import '07-technologies.css';
+@import '08-team-contact.css';
+@import '09-footer-responsive.css';

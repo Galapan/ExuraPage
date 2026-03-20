@@ -1,10 +1,10 @@
 // Team Data Mock Database
 const teamData = {
     1: {
-        name: "Carlos Mendoza",
-        role: "Lead Backend Developer",
+        name: "Desarrollador 1",
+        role: "Backend Developer",
         image: "img/bocchi.jpg",
-        bio: "Ingeniero de software con más de 8 años de experiencia creando sistemas de backend escalables, seguros y altamente eficientes para aplicaciones corporativas. Apasionado por la arquitectura de software y la optimización de rendimiento.",
+        bio: "Descripción",
         techs: [
             { name: "Python", icon: "fa-brands fa-python" },
             { name: "Flask", icon: "fa-solid fa-flask" },
@@ -14,22 +14,15 @@ const teamData = {
             { name: "AWS", icon: "fa-brands fa-aws" }
         ],
         specs: [
-            "Arquitectura de Microservicios",
-            "Optimización de Bases de Datos Relacionales",
-            "Diseño e Implementación de APIs RESTful",
-            "Integración de Servicios en la Nube"
         ],
         certs: [
-            "AWS Certified Solutions Architect",
-            "Backend Development Certificate (Meta)",
-            "System Design Expert"
         ]
     },
     2: {
-        name: "Laura Gómez",
-        role: "Frontend Architect",
+        name: "Desarrollador 2",
+        role: "Frontend Developer",
         image: "img/team2.jpg",
-        bio: "Especialista en interfaces web fluidas, dinámicas y accesibles. Obsesionada con la experiencia de usuario y el rendimiento del lado del cliente. Lidera la implementación de las mejores prácticas en desarrollo frontend.",
+        bio: "Descripción",
         techs: [
             { name: "Angular", icon: "fa-brands fa-angular" },
             { name: "React", icon: "fa-brands fa-react" },
@@ -39,23 +32,15 @@ const teamData = {
             { name: "CSS3 / Sass", icon: "fa-brands fa-css3-alt" }
         ],
         specs: [
-            "Desarrollo de SPAs",
-            "Animaciones Web (CSS/JS)",
-            "Optimización de Core Web Vitals",
-            "Sistemas de Diseño",
-            "Accesibilidad Web (WCAG)"
         ],
         certs: [
-            "Google Mobile Web Specialist",
-            "Frontend Web UI Frameworks",
-            "Advanced TypeScript Masterclass"
         ]
     },
     3: {
-        name: "Andrés López",
-        role: "UI/UX Designer & Dev",
+        name: "Desarrollador 3",
+        role: "Full Stack Developer",
         image: "img/team3.jpg",
-        bio: "Diseñador multidisciplinario que une la estética premium con la funcionalidad. Capaz de maquetar sus propios diseños con precisión de píxel. Especialista en crear experiencias memorables.",
+        bio: "Descripción",
         techs: [
             { name: "Figma", icon: "fa-solid fa-pen-nib" },
             { name: "Adobe XD", icon: "fa-solid fa-palette" },
@@ -64,16 +49,8 @@ const teamData = {
             { name: "TailwindCSS", icon: "fa-solid fa-wind" }
         ],
         specs: [
-            "Diseño de Interfaces (UI)",
-            "Investigación de Usuarios (UX)",
-            "Prototipado Interactivo",
-            "Creación de Wireframes",
-            "Design Systems"
         ],
         certs: [
-            "Google UX Design Professional Certificate",
-            "Interaction Design Foundation Member",
-            "Certified Usability Analyst (HFI)"
         ]
     }
 };

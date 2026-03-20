@@ -18,14 +18,27 @@
 C:\ExuraPage\
 ├── index.html          # Main landing page
 ├── team-member.html    # Dynamic team member profile page
-├── styles.css          # Global styles (shared across pages)
 ├── script.js           # Main JavaScript (navbar, modals, animations, forms)
 ├── team.js             # Team member data and profile page logic
+├── team-styles.css     # Team member page specific styles
 ├── QWEN.md             # This file
+├── WEB3FORMS_SETUP.md  # Web3Forms configuration guide
+├── css/
+│   ├── styles.css      # Main CSS file (imports all modules)
+│   ├── 01-variables.css    # CSS Variables and Reset
+│   ├── 02-utilities.css    # Utility classes and Buttons
+│   ├── 03-navbar.css       # Navbar and Mobile Menu
+│   ├── 04-hero.css         # Hero Section and Background Animations
+│   ├── 05-modal-forms.css  # Login Modal and Forms
+│   ├── 06-sections.css     # General Sections, Services, Portfolio
+│   ├── 07-technologies.css # Technologies Section (Tabs and Grid)
+│   ├── 08-team-contact.css # Team and Contact Sections
+│   └── 09-footer-responsive.css # Footer and Responsive Design
 └── img/
-    ├── team1.jpg       # Carlos Mendoza profile image
-    ├── team2.jpg       # Laura Gómez profile image
-    └── team3.jpg       # Andrés López profile image
+    ├── bocchi.jpg       # Team member profile image
+    ├── team1.jpg        # Team member profile image
+    ├── team2.jpg        # Team member profile image
+    └── team3.jpg        # Team member profile image
 ```
 
 ## Key Features
@@ -76,17 +89,45 @@ This is a **static website** with no build process required.
 ## Development Conventions
 
 ### CSS Architecture
-- **CSS Variables:** Defined in `:root` for theming (colors, fonts, transitions)
-- **Color Palette:**
-  - Background: `#0d0d0d` (deep black)
-  - Surface: `#141414` (dark grey for cards)
-  - Primary: `#0E665B` (emerald/teal green)
-  - Primary Light: `#1a8a7a`
-  - Text: `#ffffff` (white) and `#999999` (muted grey)
-  - Border: `#262626` and `#3a3a3a`
-- **Naming:** BEM-inspired (`.section-title`, `.service-card`, `.btn-primary`)
-- **Responsive:** Mobile-first with `@media` queries at 480px, 768px, 900px, and 1024px breakpoints
-- **Transitions:** Custom cubic-bezier easing variables for consistent animations
+
+**Modular CSS Structure:**
+- CSS dividido en 9 archivos modulares organizados por componente
+- Archivo principal `css/styles.css` importa todos los módulos
+- Cada archivo tiene un prefijo numérico para orden de carga
+
+**File Organization:**
+| Archivo | Propósito |
+|---------|-----------|
+| `01-variables.css` | Variables CSS, reset y tipografía base |
+| `02-utilities.css` | Clases utilitarias y botones |
+| `03-navbar.css` | Navbar y menú móvil |
+| `04-hero.css` | Hero section y animaciones de fondo |
+| `05-modal-forms.css` | Modales y formularios |
+| `06-sections.css` | Secciones generales, servicios, portafolio |
+| `07-technologies.css` | Sección de tecnologías |
+| `08-team-contact.css` | Equipo y contacto |
+| `09-footer-responsive.css` | Footer y media queries |
+
+**Color Palette:**
+- Background: `#0d0d0d` (deep black)
+- Surface: `#141414` (dark grey for cards)
+- Primary: `#0E665B` (emerald/teal green)
+- Primary Light: `#1a8a7a`
+- Text: `#ffffff` (white) and `#999999` (muted grey)
+- Border: `#262626` and `#3a3a3a`
+
+**Naming:** BEM-inspired (`.section-title`, `.service-card`, `.btn-primary`)
+
+**Responsive:** Mobile-first with `@media` queries at 480px, 768px, 900px, and 1024px breakpoints
+
+**Transitions:** Custom cubic-bezier easing variables for consistent animations
+
+### Team Member Page Styles
+
+**Separate Stylesheet:** `team-styles.css`
+- Contains all styles specific to the team member profile page
+- Imported only in `team-member.html`
+- Keeps main CSS focused on landing page
 
 ### JavaScript Patterns
 - **DOM Ready:** All code wrapped in `DOMContentLoaded` event
