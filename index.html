@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exura Studio | Desarrollo de Plataformas Web</title>
+    <meta name="description" content="Exura Studio. Creamos sistemas web personalizados y modulares, desde landing pages hasta sistemas de gestión digital complejos.">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-text">EXURA<span class="logo-accent">.</span></span>
+            </a>
+            <nav class="nav-links">
+                <a href="#servicios" class="nav-item">Qué Hacemos</a>
+                <a href="#portafolio" class="nav-item">Portafolio</a>
+                <a href="#tecnologias" class="nav-item">Tecnologías</a>
+                <a href="#equipo" class="nav-item">Equipo</a>
+                <button class="nav-item btn-login" id="openLoginBtn">Login</button>
+                <a href="#contacto" class="nav-item btn-primary">Contáctenos</a>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-close-btn" id="closeMobileBtn">✕</button>
+        <a href="#servicios" class="mobile-nav-item">Qué Hacemos</a>
+        <a href="#portafolio" class="mobile-nav-item">Portafolio</a>
+        <a href="#tecnologias" class="mobile-nav-item">Tecnologías</a>
+        <a href="#equipo" class="mobile-nav-item">Equipo</a>
+        <button class="mobile-nav-item" id="mobileLoginBtn">Login</button>
+        <a href="#contacto" class="mobile-nav-item mobile-btn-primary">Contáctenos</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero view-animate" id="inicio">
+        <div class="hero-content">
+            <h1 class="hero-title">Impulsamos tu <span class="text-gradient">crecimiento digital</span></h1>
+            <p class="hero-subtitle">Construimos plataformas web personalizadas, escalables y diseñadas a medida para revolucionar la gestión de tu negocio.</p>
+            <div class="hero-actions">
+                <a href="#servicios" class="btn btn-outline">Descubre Más</a>
+                <a href="#contacto" class="btn btn-primary">Empieza Ahora</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Section -->
+    <section class="section section-full" id="servicios">
+        <div class="container">
+            <div class="section-header view-animate">
+                <h2 class="section-title">Qué <span class="text-gradient">Hacemos</span></h2>
+                <p class="section-subtitle">Construimos una base sólida desde el inicio. Sobre esa estructura, tu plataforma crece de forma modular, tan grande como tu negocio lo requiera.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card view-animate stagger-1">
+                    <div class="service-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                    <h3>Desarrollo de Plataformas Web</h3>
+                    <p>Sistemas web personalizados desde cero. Panel administrativo, gestión de usuarios con roles y base de datos relacional estructurada.</p>
+                </div>
+
+                <div class="service-card view-animate stagger-2">
+                    <div class="service-icon"><i class="fa-solid fa-layer-group"></i></div>
+                    <h3>Arquitectura Modular</h3>
+                    <p>Evolución sin rehacer el sistema. Expansión por módulos, escalabilidad progresiva y crecimiento controlado.</p>
+                </div>
+
+                <div class="service-card view-animate stagger-3">
+                    <div class="service-icon"><i class="fa-solid fa-cogs"></i></div>
+                    <h3>Módulos a Medida</h3>
+                    <p>Nuevas capacidades según necesitas. Módulos de pagos, automatización de procesos y generación de dashboards.</p>
+                </div>
+
+                <div class="service-card view-animate stagger-1">
+                    <div class="service-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3>Sistemas de Gestión Digital</h3>
+                    <p>Digitalizamos procesos. Gestión de clientes, fichas clínicas y seguimiento ordenado de tus operaciones.</p>
+                </div>
+
+                <div class="service-card view-animate stagger-2">
+                    <div class="service-icon"><i class="fa-solid fa-link"></i></div>
+                    <h3>Integraciones</h3>
+                    <p>Conectamos tu sistema con WhatsApp, pasarelas de pago, Zoom y generadores automáticos de correos y PDFs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portafolio Section -->
+    <section class="section section-full bg-dark" id="portafolio">
+        <div class="container">
+            <div class="section-header view-animate">
+                <h2 class="section-title">Nuestro <span class="text-gradient">Portafolio</span></h2>
+                <p class="section-subtitle">Proyectos en producción que demuestran nuestra capacidad para crear soluciones robustas y escalables.</p>
+            </div>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-card view-animate stagger-1">
+                    <div class="portfolio-info">
+                        <h3>Plataforma SaaS Logística</h3>
+                        <p>Gestión de flotas y rutas en tiempo real.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card view-animate stagger-2">
+                    <div class="portfolio-info">
+                        <h3>Portal Médico Digital</h3>
+                        <p>Fichas clínicas e integración con telemedicina.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card view-animate stagger-3">
+                    <div class="portfolio-info">
+                        <h3>E-Commerce B2B</h3>
+                        <p>Catálogo modular y múltiples pasarelas de pago.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tecnologías Section -->
+    <section class="section section-full bg-dark" id="tecnologias">
+        <div class="container">
+            <div class="tech-section-header view-animate">
+                <h2 class="section-title"><span class="tech-title-main">Habilidades</span> <span class="tech-title-muted">y Tecnologías</span></h2>
+                <div class="tech-underline"></div>
+            </div>
+
+            <div class="tech-tabs view-animate">
+                <button class="tech-tab active" data-tab="frontend">
+                    <i class="fa-solid fa-desktop"></i> Frontend
+                </button>
+                <button class="tech-tab" data-tab="backend">
+                    <i class="fa-solid fa-server"></i> Backend
+                </button>
+                <button class="tech-tab" data-tab="data">
+                    <i class="fa-solid fa-database"></i> Data
+                </button>
+            </div>
+
+            <div class="tech-panel-wrapper view-animate">
+                <!-- Frontend -->
+                <div class="tech-panel active" data-panel="frontend">
+                    <div class="tech-grid">
+                        <div class="tech-card"><i class="fa-brands fa-angular"></i> Angular</div>
+                        <div class="tech-card"><i class="fa-brands fa-js"></i> JavaScript</div>
+                        <div class="tech-card"><i class="fa-solid fa-code"></i> TypeScript</div>
+                        <div class="tech-card"><i class="fa-brands fa-html5"></i> HTML5</div>
+                        <div class="tech-card"><i class="fa-brands fa-css3-alt"></i> CSS3</div>
+                    </div>
+                </div>
+                <!-- Backend -->
+                <div class="tech-panel" data-panel="backend">
+                    <div class="tech-grid">
+                        <div class="tech-card"><i class="fa-brands fa-python"></i> Python (Flask)</div>
+                        <div class="tech-card"><i class="fa-brands fa-node-js"></i> TypeScript (NestJS)</div>
+                        <div class="tech-card"><i class="fa-solid fa-network-wired"></i> Desarrollo de APIs REST</div>
+                        <div class="tech-card"><i class="fa-solid fa-cubes"></i> Arquitectura modular</div>
+                    </div>
+                </div>
+                <!-- Data -->
+                <div class="tech-panel" data-panel="data">
+                    <div class="tech-grid">
+                        <div class="tech-card"><i class="fa-solid fa-database"></i> PostgreSQL</div>
+                        <div class="tech-card"><i class="fa-solid fa-database"></i> MySQL</div>
+                        <div class="tech-card"><i class="fa-solid fa-table"></i> Diseño relacional</div>
+                        <div class="tech-card"><i class="fa-brands fa-python"></i> SQLAlchemy</div>
+                        <div class="tech-card"><i class="fa-solid fa-code"></i> TypeORM / Prisma</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nuestro Equipo Section -->
+    <section class="section section-full" id="equipo">
+        <div class="container">
+            <div class="section-header view-animate">
+                <h2 class="section-title">Nuestro <span class="text-gradient">Equipo</span></h2>
+                <p class="section-subtitle">Conoce a los expertos detrás de nuestras soluciones excepcionales.</p>
+            </div>
+
+            <div class="team-grid">
+                <a href="team-member.html?id=1" class="team-card view-animate stagger-1">
+                    <div class="team-img">
+                        <img src="img/" alt="Miembro 1">
+                    </div>
+                    <div class="team-info">
+                        <h3>Miembro 1</h3>
+                        <p class="role">Backend Developer</p>
+                    </div>
+                </a>
+
+                <a href="team-member.html?id=2" class="team-card view-animate stagger-2">
+                    <div class="team-img">
+                        <img src="img/team2.jpg" alt="Laura Gómez">
+                    </div>
+                    <div class="team-info">
+                        <h3>Laura Gómez</h3>
+                        <p class="role">Frontend Architect</p>
+                    </div>
+                </a>
+
+                <a href="team-member.html?id=3" class="team-card view-animate stagger-3">
+                    <div class="team-img">
+                        <img src="img/team3.jpg" alt="Andrés López">
+                    </div>
+                    <div class="team-info">
+                        <h3>Andrés López</h3>
+                        <p class="role">UI/UX Designer & Dev</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto Section -->
+    <section class="section section-full border-top" id="contacto">
+        <div class="container">
+            <div class="contact-wrapper view-animate">
+                <div class="contact-header">
+                    <h2 class="section-title">Inicia tu <span class="text-gradient">Proyecto</span></h2>
+                    <p class="section-subtitle" style="margin-inline: 0; text-align: left;">Cuéntanos sobre tu idea y diseñaremos una solución a la medida de tus necesidades.</p>
+                </div>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">Primer Nombre</label>
+                            <input type="text" id="firstName" required placeholder="Tu nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Primer Apellido</label>
+                            <input type="text" id="lastName" required placeholder="Tu apellido">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Número de Teléfono</label>
+                        <input type="tel" id="phone" required placeholder="+1 234 567 8900">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="request">Solicitud del Cliente</label>
+                        <textarea id="request" rows="5" required placeholder="Explícanos tu idea o necesidad..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary w-full" style="padding: 1rem; font-size: 1.1rem;">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div class="modal-overlay" id="loginModal">
+        <div class="modal-content view-animate-modal">
+            <button class="close-modal-btn" id="closeLoginModal">✕</button>
+            <h2 class="modal-title">Iniciar Sesión</h2>
+            <form class="login-form">
+                <div class="form-group">
+                    <label for="loginEmail">Correo Electrónico</label>
+                    <input type="email" id="loginEmail" placeholder="tu@correo.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Contraseña</label>
+                    <input type="password" id="loginPassword" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn btn-glow w-full">Entrar</button>
+                <div class="modal-footer">
+                    <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Script included -->
+    <script src="script.js"></script>
+</body>
+</html>
