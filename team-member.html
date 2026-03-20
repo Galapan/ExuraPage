@@ -23,15 +23,17 @@
         }
 
         .profile-sidebar {
-            background: linear-gradient(180deg, var(--color-surface) 0%, rgba(20, 20, 20, 0.9) 100%);
-            border: 1px solid var(--color-border);
-            border-radius: var(--card-radius);
-            padding: 2.5rem 2rem;
+            background: rgba(20, 20, 20, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 3rem 2rem;
             text-align: center;
             position: sticky;
             top: 140px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            animation: slideInLeft 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            animation: slideInLeft 0.8s cubic-bezier(0.2, 1, 0.3, 1) forwards;
         }
 
         @keyframes slideInLeft {
@@ -95,9 +97,11 @@
         }
 
         .detail-section {
-            background: linear-gradient(180deg, var(--color-surface) 0%, rgba(20, 20, 20, 0.9) 100%);
-            border: 1px solid var(--color-border);
-            border-radius: var(--card-radius);
+            background: rgba(20, 20, 20, 0.4);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
             padding: 2.5rem;
             opacity: 0;
             transform: translateY(30px);

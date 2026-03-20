@@ -244,11 +244,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Add Loading Animation for Images ---
     const images = document.querySelectorAll('img');
     images.forEach(img => {
-        img.addEventListener('load', function() {
-            this.style.opacity = '1';
-        });
-        img.style.opacity = '0';
-        img.style.transition = 'opacity 0.3s ease';
+        if (img.complete) {
+            img.style.opacity = '1';
+        } else {
+            img.addEventListener('load', function() {
+                this.style.opacity = '1';
+            });
+            img.addEventListener('error', function() {
+                // Fallback or just show broken icon but don't hide it completely
+                this.style.opacity = '1'; 
+            });
+            img.style.opacity = '0';
+        }
+        img.style.transition = 'opacity 0.4s ease';
     });
 
 });

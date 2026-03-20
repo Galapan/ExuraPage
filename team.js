@@ -3,7 +3,7 @@ const teamData = {
     1: {
         name: "Carlos Mendoza",
         role: "Lead Backend Developer",
-        image: "img/team1.jpg",
+        image: "img/bocchi.jpg",
         bio: "Ingeniero de software con más de 8 años de experiencia creando sistemas de backend escalables, seguros y altamente eficientes para aplicaciones corporativas. Apasionado por la arquitectura de software y la optimización de rendimiento.",
         techs: [
             { name: "Python", icon: "fa-brands fa-python" },
