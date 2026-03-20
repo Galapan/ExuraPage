@@ -11,6 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    function getScrollbarWidth() {
+        return window.innerWidth - document.documentElement.clientWidth;
+    }
+
     // --- Mobile Menu Toggle ---
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const closeMobileBtn = document.getElementById('closeMobileBtn');
@@ -18,8 +22,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuItems = document.querySelectorAll('.mobile-nav-item');
 
     function toggleMobileMenu() {
-        mobileMenu.classList.toggle('active');
-        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        const scrollbarWidth = getScrollbarWidth();
+        const isActive = mobileMenu.classList.toggle('active');
+        
+        if (isActive) {
+            document.body.style.overflow = 'hidden';
+            document.body.style.paddingRight = `${scrollbarWidth}px`;
+            navbar.style.paddingRight = `${scrollbarWidth}px`;
+        } else {
+            document.body.style.overflow = '';
+            document.body.style.paddingRight = '';
+            navbar.style.paddingRight = '';
+        }
     }
 
     mobileMenuBtn.addEventListener('click', toggleMobileMenu);
@@ -36,19 +50,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Login Modal Logic ---
     const loginModal = document.getElementById('loginModal');
-    const openBtns = [document.getElementById('openLoginBtn'), document.getElementById('mobileLoginBtn')];
+    const openBtns = [document.getElementById('heroLoginBtn'), document.getElementById('mobileLoginBtn')];
     const closeBtn = document.getElementById('closeLoginModal');
     const loginForm = document.querySelector('.login-form');
 
     function openModal(e) {
         if(e) e.preventDefault();
+        const scrollbarWidth = getScrollbarWidth();
         loginModal.classList.add('active');
         document.body.style.overflow = 'hidden';
+        document.body.style.paddingRight = `${scrollbarWidth}px`;
+        navbar.style.paddingRight = `${scrollbarWidth}px`;
     }
 
     function closeModal() {
         loginModal.classList.remove('active');
         document.body.style.overflow = '';
+        document.body.style.paddingRight = '';
+        navbar.style.paddingRight = '';
     }
 
     openBtns.forEach(btn => {

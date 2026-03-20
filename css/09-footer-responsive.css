@@ -29,6 +29,37 @@ footer {
     }
 }
 
+@media (max-width: 1100px) {
+    .nav-links {
+        gap: 1.25rem;
+    }
+    .nav-item {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 1020px) {
+    .nav-links {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+        background: none;
+        border: none;
+        color: var(--color-text);
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        cursor: pointer;
+        transition: all var(--transition-fast);
+    }
+
+    .mobile-menu-btn:hover {
+        color: var(--color-primary);
+        transform: scale(1.1);
+    }
+}
+
 @media (max-width: 900px) {
     .contact-wrapper {
         grid-template-columns: 1fr;
@@ -62,26 +93,6 @@ footer {
     #tecnologias {
         padding: 4rem 1.5rem;
         min-height: 100vh;
-    }
-
-    .nav-links {
-        display: none;
-    }
-
-    .mobile-menu-btn {
-        display: block;
-        background: none;
-        border: none;
-        color: var(--color-text);
-        font-size: 1.5rem;
-        padding: 0.5rem;
-        cursor: pointer;
-        transition: all var(--transition-fast);
-    }
-
-    .mobile-menu-btn:hover {
-        color: var(--color-primary);
-        transform: scale(1.1);
     }
 
     .hero-title {
