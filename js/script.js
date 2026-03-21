@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function toggleMobileMenu() {
         const scrollbarWidth = getScrollbarWidth();
         const isActive = mobileMenu.classList.toggle('active');
-        
+
         if (isActive) {
             document.body.style.overflow = 'hidden';
             document.body.style.paddingRight = `${scrollbarWidth}px`;
@@ -36,8 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    mobileMenuBtn.addEventListener('click', toggleMobileMenu);
-    closeMobileBtn.addEventListener('click', toggleMobileMenu);
+    if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+    if (closeMobileBtn) closeMobileBtn.addEventListener('click', toggleMobileMenu);
 
     // Close mobile menu when clicking a link
     mobileMenuItems.forEach(item => {
@@ -77,15 +77,17 @@ document.addEventListener('DOMContentLoaded', () => {
     if(closeBtn) closeBtn.addEventListener('click', closeModal);
 
     // Close on overlay click
-    loginModal.addEventListener('click', (e) => {
-        if (e.target === loginModal) {
-            closeModal();
-        }
-    });
+    if(loginModal) {
+        loginModal.addEventListener('click', (e) => {
+            if (e.target === loginModal) {
+                closeModal();
+            }
+        });
+    }
 
     // Close on Escape key
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && loginModal.classList.contains('active')) {
+        if (e.key === 'Escape' && loginModal && loginModal.classList.contains('active')) {
             closeModal();
         }
     });
